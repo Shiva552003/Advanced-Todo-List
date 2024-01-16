@@ -1,0 +1,23 @@
+button{
+    position: absolute;
+    align-self:flex-end;
+    /* margin-top: 10em; */
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+}
+h4{
+    width: 70em; 
+    /* border: 3px black groove */
+}
+p{
+    width: 80em;
+     /* border: 3px solid black */
+}
+div{
+    display: flex;
+    flex-direction: column;
+    /* border:2px solid; */
+    border-color: rgba(0, 0, 0, 0.3);
+}

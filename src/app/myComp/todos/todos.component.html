@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 style="text-align: center">Todos Application</h1>
+
+  <app-add-todo (addTodo)="addToArray($event)"></app-add-todo>
+
+  <h4>Your Todos</h4>
+  <br />
+  <div *ngIf="todos.length === 0; else elseBlock">
+    You are all done!!!Congrats
+  </div>
+
+  <ng-template #elseBlock>
+    <div *ngFor="let xy of filteredTodo">
+      <app-todo-item [x]="xy" (delete)="deleteTodo($event)"></app-todo-item>
+    </div>
+  </ng-template>
+
+
+</div>

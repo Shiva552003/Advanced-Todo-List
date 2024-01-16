@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-list-advanced';
+  title = 'todo-list';
+  searchQuery : string= '';
+  isLoggedIn: boolean;
+
+  constructor(private sharedService: SharedService) {}
+  onLoginChange(isLoggedIn: boolean) {
+    this.isLoggedIn = isLoggedIn;
+  }
+
+  onSearch(): void {
+    this.sharedService.setSearchQuery(this.searchQuery);
+  }
+
+  onButtonClick(){
+    this.searchQuery = ''; 
+  }
 }
+
